@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censo 2023</title>
+    <script src="js/sistema.js"></script>
+    <script src="js/clases.js"></script>
+    <script src="js/codigo.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" src="https://p1.develotion.com/2023_03/logo.jpg" alt="logo">
+          
+          <ul id="navPrincipal"> 
+         
+            <li id="btnAgregarPersona" class="btnFuncionalidades censista invitado" >
+                <a>Realizar Censo</a> 
+            </li>
+
+            <li id="btnConsultaPreCompletados" class="btnFuncionalidades censista invitado">
+              <a>Consulta censo</a> 
+            </li>
+
+            <li id="btnReasignarPersonaParaValidar" class="btnFuncionalidades censista">
+              <a>Reasignar persona para validar</a>
+            </li>
+          
+            <li id="btnVisualizarInfoEstadistica"  class="btnFuncionalidades censista">
+              <a>Visualizar información estadística</a>
+            </li>
+
+            <li id="btnVerListaCensados" class="btnFuncionalidades invitado">
+              <a>Visualizar lista de censados</a>
+            </li> 
+
+            <li id = "cerrarSesion">
+                <a>Cerrar sesión</a>
+            </li>
+            <div id="aux">
+              <p id="nombreUsuarioLogeado"></p>
+          </div>
+          
+          </ul>
+
+          <div id="aux">
+            <a id="btnSoyInvitado">Soy invitado</a> 
+            <p id="logueado"></p>
+          </div><!-- FIN AUX -->  
+        </div><!-- FIN CABEZAL -->
+
+        <div id="contenido"> <!--INICIO CONTENIDO CSS-->
+
+        <div id="registro" class="seccion"> <!--REGISTRO-->
+          
+        <P><strong>REGISTRO</strong></P><br>
+         
+        <label for="registroNombre">Ingrese su nombre completo</label>
+        <input id="registroNombre" placeholder="Ingrese su nombre y apellido"><br>
+        
+        <label for="registroUsuario">Ingrese su nombre de usuario</label>
+        <input type="text" id="registroUsuario" placeholder="Ingrese usuario"><br>
+        
+        <label for="registroContraseña">Ingrese una contraseña</label>
+        <input type="text" id="registroContraseña" placeholder="Ingrese una contraseña"><br>
+        
+
+        <p id="pRegistro"></p>
+      
+        <input type="button" id="btnRegistro" value="Registrarse"><br>
+
+        <p>Ya tiene cuenta? Registrese</p>
+        <input type="button" id="btnIrAlLogin" value="Quiero ingresar con mi cuenta"><br>
+        
+      </div><!--FIN ID REGISTRO-->
+       
+     
+      <div id="login" class="seccion"> <!--INICIO -->
+
+        <P><strong>INICIO DE SESIÓN</strong></P><br>
+
+        <label for="LoginNUsuario">Nombre de Usuario:</label>
+        <input type="text" id="loginNUsuario"><br>
+
+        <label for="LoginContraseña">Contraseña:</label>
+        <input type="text" id="loginContraseña"><br>
+
+        <input type="button" id="btnLogin" value="Ingresar">
+
+        <p id="pLogIn"></p>
+   
+        <p>No estás registrado?</p>
+        <input type="button" id="btnIrAlRegistrar" value="Me quiero registrar">
+
+      </div><!--FIN ID LOGIN-->
+        
+      <div id="funcionalidades"><!--FUNCIONALIDADES-->
+        <div id="agregarPersona" class="seccion"><!--AGREGAR PERSONA-->
+        <p><strong>INGRESA DATOS PARA EL CENSO</strong></p>
+
+        <label for="pNombre">Primer nombre: </label>
+        <input type="text" id="pNombre" placeholder="Nombre y apellido de la persona"><br>
+
+        <label for="pApellido">Primer Apellido: </label>
+        <input type="text" id="pApellido" placeholder="Nombre y apellido de la persona"><br>
+
+        <label for="pEdad">Edad: </label>
+        <input type="text" id="pEdad" placeholder="Edad debe ser ingresado en números"><br>
+
+        <label for="pCedula">C.I: </label>
+        <input type="text" id="pCedula" placeholder="Cédula de identidad de la persona"><br>
+
+        <label>Departamento de residencia:</label>
+        <select id="slcDepto" class="deptos"></select><br>
+
+        <label>Ocupación</label>
+        <select id="slcOcupacion">
+          <option value="-1">Seleccione...</option>
+          <option value="1">Dependiente</option>
+          <option value="2">Independiente</option>
+          <option value="3">No trabaja</option>
+          <option value="4">Estudiante</option>
+        </select><br><br>
+
+        <input type="button" id="pCensoFinalizado" value="Censar persona">
+
+        <p id="pDatosCenso"></p>
+      </div> <!--FIN DIV AGREGAR PERSONA-->
+
+      <div id="consultaPreCompletados"  class="seccion"><!--CONSULTA PRE COMPLETADOS  -->
+        <p><strong>CONSULTA DE CENSOS PRE COMPLETADOS</strong></p>
+
+        <label for="consultaCedula">Cédula: </label>
+        <input type="text" id="consultaCedula" placeholder="Cédula de persona a validar">
+
+        <input type="button" id="consultaCensoAValidar" value="Consultar"><br><br>
+
+        <hr>
+        
+        <label for="cNombre">Primer nombre: </label>
+        <input type="text" id="cNombre" placeholder="Nombre y apellido de la persona"><br>
+
+        <label for="cApellido">Primer Apellido: </label>
+        <input type="text" id="cApellido"  placeholder="Nombre y apellido de la persona"><br>
+
+        <label for="cEdad">Edad: </label>
+        <input type="text" id="cEdad"   placeholder="Edad debe ser ingresado en números"><br>
+
+        <label>Departamento de residencia:</label>
+        <select id="slcDeptoC" class="deptos"></select><br>
+
+        <label>Ocupación</label>
+        <select id="slcOcupacionC" >
+          <option value="-1">Seleccione...</option>
+          <option value="1">Dependiente</option>
+          <option value="2">Independiente</option>
+          <option value="3">No trabaja</option>
+          <option value="4">Estudiante</option>
+        </select><br><br>
+
+        <input type="button" id="btnValidarCenso" value="Validar censo">
+
+        <input type="button" id="irARealizarCenso" value="Ir a realizar censo">
+
+        <input type="button" id="btnEditarCenso" value="Editar censo">
+      
+        <input type="button" id="btnEliminarDatos" value="Eliminar datos">
+
+        <p id="pMensaje"></p >
+        
+        </div><!--FIN CONSULTA PRE COMPLETADOS-->
+
+      <div id="reasignarPersonaParaValidar" class="seccion"> <!--REASIGNA PERSONAS-->
+        
+      <label>Persona pendiente a validar: </label>
+      <select id="slcPersonasPendientesValidar" class="selectPersonas">
+        <!--CARGAR DINAMICAMENTE LAS PERSONAS PENDIENTES A VALIDAR-->
+      </select><br>
+
+      <label>Censista:</label>
+      <select id="slcCensistas" class="censistas">
+         <!--CARGAR DINAMICAMENTE LOS CENSISTAS, MENOS EL QUE ESTA LOGUEADO-->
+      </select><br>
+
+      <input type="button" id="rAsignarCensista" value="Re-asignar persona">
+
+      <p id="rMensajeReasignado"></p>
+      </div><!--FIN REASIGNA PERSONAS-->
+
+      <div id="visualizarInfoEstadistica" class="seccion"><!--INFO ESTADISTICA-->
+
+        <table border="1">
+          <thead>
+              <tr>
+                <th>TOTAL DE PERSONAS CENSADAS</th>
+                <th>PORCENTAJE DE CENSOS PENDIENTES A VALIDAR:</th>
+              </tr>
+          </thead>
+        <tbody id="tblInfoEstadistica"></tbody>
+      </table><br><br>
+   
+      <label><strong>ELIJA UN DEPARTAMENTO PARA MOSTRAR INFORMACIÓN</label></strong><br>
+        <select id="slcDeptosInfoEstadistica" class="deptos">
+        </select>
+        <input type="button" id="btnCensosPorDepto" value="MOSTRAR"><br><br>
+
+        <p id="pMensajeTbl"></p>
+        
+        <table border="1">
+          <thead>
+              <tr>
+                <th>CENSOS POR DEPARTAMENTO:</th>
+                <th>MAYORES DE EDAD/ MENORES DE EDAD</th>        
+              </tr>
+          </thead>
+        <tbody id="tblInfoEstadisticaDepto"></tbody>
+      </table>
+     
+      </div><!--FIN VISUALIZAR INFO ESTADISTICA-->
+
+      <div id="verListaCensados" class="seccion"><!--LISTA DE CENSADOS-->
+        <table border="1">
+          <thead>
+            <tr>
+              <th>DEPARTAMENTO</th>
+              <th>ESTUDIAN</th>
+              <th>NO TRABAJAN</th>
+              <th>DEPENDIENTES O INDEPENDIENTES</th>
+              <th>TOTAL DE CENSOS</th>
+            </tr>
+          </thead>
+          <tbody id="tblListaCensados"></tbody>
+        </table>
+      </div><!--FIN LISTA DE CENSADOS-->
+      </div><!--FUNCIONALIDADES-->
+            <!--FIN ELEMENTOS-->
+          </div><!-- FIN CONTENIDO -->
+          <div id="pie">
+            <a href="https://www.ort.edu.uy">Programación 1</a>
+          </div><!-- FIN PIE -->
+        </div><!-- FIN CONTENEDOR -->
+  
+</body>
+</html>
+
